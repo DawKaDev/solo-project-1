@@ -1,0 +1,40 @@
+.team-box {
+  list-style-type: none;
+  padding: 0 15px;
+}
+
+.team-box__item {
+  display: flex;
+  color: $info-color;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  &--active {
+    .team-box__image {
+      &:after {
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 15px;
+        background: $success-color;
+        border-radius: 50%;
+        left: 80%;
+      }
+    }
+  }
+}
+
+.team-box__image {
+  position: relative;
+
+  img {
+    transition: all 0.5s;
+    width: 60px;
+    border-radius: 50%;
+  }
+}
+
+.team-box__profile {
+  padding: 0 0 0 15px;
+  transition: all 0.5s;
+}

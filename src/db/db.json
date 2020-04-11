@@ -1,0 +1,313 @@
+{
+    "menu": [
+        {
+            "icon": "icon-general",
+            "title": "General",
+            "link": "general",
+            "heading": "General statistics",
+            "sections": ["datepicker", "chart"],
+            "modules": ["links", "general"]
+        },
+        {
+            "icon": "icon-details",
+            "title": "Details",
+            "link": "details",
+            "heading": "Detail statistic",
+            "sections": ["datepicker", "table"]
+        },
+        {
+            "icon": "icon-links",
+            "title": "Links",
+            "link": "links",
+            "sections": ["table"],
+            "data": [
+                {
+                    "name": "Home page",
+                    "url": "http://www.homepage.com"
+                },
+                {
+                    "name": "Currently offer",
+                    "url": "http://www.currently.com"
+                },
+                {
+                    "name": "Blurpix",
+                    "url": "http://www.blurpix.com"
+                },
+                {
+                    "name": "Your Site",
+                    "url": "http://www.yoursite.com"
+                },
+                {
+                    "name": "Google",
+                    "url": "http://www.google.com"
+                },
+                {
+                    "name": "Facebook",
+                    "url": "http://www.facebook.com"
+                },
+                {
+                    "name": "Dashboard",
+                    "url": "http://www.dashboard.com"
+                },
+                {
+                    "name": "Blurax",
+                    "url": "http://www.blurax.com"
+                },
+                {
+                    "name": "Piece of Wine",
+                    "url": "http://www.pieceofwine.com"
+                },
+                {
+                    "name": "Twitter",
+                    "url": "http://www.twitter.com"
+                }
+            ]
+        },
+        {
+            "icon": "icon-banners",
+            "title": "Banners",
+            "link": "banners",
+            "sections": ["table"]
+        },
+        {
+            "icon": "icon-personaldata",
+            "title": "Personala data",
+            "link": "personal"
+        },
+        {
+            "icon": "icon-payout",
+            "title": "Payout",
+            "link": "payout",
+            "heading": "Payout history",
+            "sections": ["datepicker", "table"]
+        },
+        {
+            "icon": "icon-postback",
+            "title": "Postback",
+            "link": "postback"
+        }
+    ],
+    "links": [
+        {
+            "name": "Home page",
+            "url": "http://www.homepage.com"
+        },
+        {
+            "name": "Currently offer",
+            "url": "http://www.currently.com"
+        },
+        {
+            "name": "Blurpix",
+            "url": "http://www.blurpix.com"
+        },
+        {
+            "name": "Your Site",
+            "url": "http://www.yoursite.com"
+        },
+        {
+            "name": "Google",
+            "url": "http://www.google.com"
+        },
+        {
+            "name": "Facebook",
+            "url": "http://www.facebook.com"
+        },
+        {
+            "name": "Dashboard",
+            "url": "http://www.dashboard.com"
+        },
+        {
+            "name": "Blurax",
+            "url": "http://www.blurax.com"
+        },
+        {
+            "name": "Piece of Wine",
+            "url": "http://www.pieceofwine.com"
+        },
+        {
+            "name": "Twitter",
+            "url": "http://www.twitter.com"
+        }
+    ],
+    "banners": [
+        {
+            "name": "Banner main",
+            "url": "http://www.website.com/bannermain.gif"
+        },
+        {
+            "name": "Sign up banner",
+            "url": "http://www.website.com/signup.gif"
+        },
+        {
+            "name": "Banner left side",
+            "url": "http://www.website.com/leftside.gif"
+        },
+        {
+            "name": "Vertical banner",
+            "url": "http://www.website.com/vert.gif"
+        },
+        {
+            "name": "Front banner",
+            "url": "http://www.website.com/front.gif"
+        },
+        {
+            "name": "Horizontal banner",
+            "url": "http://www.website.com/horizontal.gif"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "firstname": "Leonardo",
+            "lastname": "Dicaprio",
+            "email": "leo@gmail.com",
+            "phone": "+1 432 555 00 44",
+            "skype": "Leonardo.D",
+            "icq": "",
+            "msn": "",
+            "wallet": "",
+            "password": ""
+        },
+        {
+            "id": 2,
+            "firstname": "Andrea",
+            "lastname": "Martin",
+            "age": 28,
+            "country": "Spain"
+        }
+    ],
+    "notifications": [
+        {
+            "id": 1,
+            "title": "Make offer for client",
+            "content": "Make new offer for ERP system.",
+            "new": 1
+        },
+        {
+            "id": 2,
+            "title": "Send report",
+            "content": "Monthly selling results.",
+            "new": 1
+        },
+        {
+            "id": 3,
+            "title": "New lead",
+            "content": "You have new lead task.",
+            "new": 0
+        }
+    ],
+    "details": [
+        {
+            "trackerName": "aff/sam_test",
+            "initiatedDate": "17/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "34,425.00",
+            "payout": "234.00",
+            "turnover": "421,342.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/leo_test",
+            "initiatedDate": "15/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "29,436.00",
+            "payout": 941.00,
+            "turnover": "784,435.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/sam_test",
+            "initiatedDate": "17/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "34,425.00",
+            "payout": 234.00,
+            "turnover": "421,342.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/leo_test",
+            "initiatedDate": "15/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "29,436.00",
+            "payout": 941.00,
+            "turnover": "784,435.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/sam_test",
+            "initiatedDate": "17/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "34,425.00",
+            "payout": 234.00,
+            "turnover": "421,342.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/leo_test",
+            "initiatedDate": "15/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "29,436.00",
+            "payout": 941.00,
+            "turnover": "784,435.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/sam_test",
+            "initiatedDate": "17/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "34,425.00",
+            "payout": 234.00,
+            "turnover": "421,342.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        },
+        {
+            "trackerName": "aff/leo_test",
+            "initiatedDate": "15/08/02 (12:58)",
+            "visits": 232,
+            "unique": 114,
+            "signups": 12,
+            "ftd": 6,
+            "depositors": 3,
+            "deposits": "29,436.00",
+            "payout": 941.00,
+            "turnover": "784,435.00",
+            "deal": "cpl (200)",
+            "account": "bank"
+        }
+    ]
+}

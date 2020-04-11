@@ -1,0 +1,80 @@
+.sidebar {
+  position: relative;
+  background: darken($dark-color, 20%);
+  width: 300px;
+  transition: all 0.5s;
+  z-index: 555555;
+
+  &--small {
+    width: 80px;
+
+    *.brand__logo {
+      width: 0;
+      font-size: 0;
+    }
+
+    *.link__name {
+      font-size: 0;
+    }
+
+    *.sidebar__title {
+      font-size: 0;
+    }
+
+    *.team-box__profile {
+      font-size: 0;
+    }
+    
+    *.team-box__image img {
+      width: 40px;
+    }
+  }
+}
+
+.sidebar__nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.sidebar__title {
+  text-transform: uppercase;
+  font-family: $brand-font;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 991px) {
+  .main-wrapper {
+    flex-wrap: wrap;
+  }
+  
+  .sidebar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: all 0.5s;
+
+    .brand__logo {
+      display: block;
+      font-size: 24px;
+      width: 100%;
+    }
+
+    .link__name {
+      display: block;
+      font-size: 18px;
+    }
+  }
+
+  .nav, .sidebar__box {
+    display: none;
+    transition: all 0.5s;
+  }
+
+  .sidebar--small {
+    *.nav, *.sidebar__box {
+      display: block;
+    }
+  }
+}

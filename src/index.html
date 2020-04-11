@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Studio - Dashboard</title>
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="vendor/css/Glyphter.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container-fluid main-wrapper">
+        <div class="sidebar sidebar-wrapper">
+            <!--//<div class="sidebar__nav">
+                <div class="brand">
+                    <div class="brand__logo">
+                        <img src="" alt="Just do it">
+                    </div>
+                    <div class="brand__mobile">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+                </div>
+                <ul class="nav">
+                    <li class="nav__item">
+                        <i class="icon icon-general"></i>General
+                    </li>
+                    <li class="nav__item">
+                        <i class="icon icon-details"></i>Details
+                    </li>
+                    <li class="nav__item">
+                        <i class="icon icon-links"></i>Links
+                    </li>
+                    <li class="nav__item">
+                        <i class="icon icon-banners"></i>Banners
+                    </li>
+                    <li class="nav__item">
+                        <i class="icon icon-personaldata"></i>Personal data
+                    </li>
+                    <li class="nav__item">
+                        <i class="icon icon-payout"></i>Payout
+                    </li>
+                    <li class="nav__item">
+                        <i class="icon icon-postback"></i>Postback
+                    </li>
+                </ul>
+                <div class="sidebar__box">
+                    <h2>Team Box Title</h2>
+                    <ul class="team-box">
+                        <li class="team-box__item">
+                            <div class="team-box__image">
+                                <img src="" alt="Profile image">
+                            </div>
+                            <p class="team-box__profile">Adam Knotph</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>//-->
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="topbar__item lead dropable">
+                    <i class="topbar__icon icon-wallet"></i>
+                    <span class="topbar__content">$1,500.00</span>
+                    <i class="topbar__icon icon-arrow-down"></i>
+                </div>
+                <div class="topbar__item notification">
+                    <i class="topbar__icon topbar__icon--alert icon-notification"></i>
+                </div>
+                <div class="topbar__item profile">
+                    <i class="topbar__icon icon-profile"></i>
+                    <span class="topbar__content topbar__content--info profile__name">Lorenzo Banani</span>
+                    <div class="profile__info">
+                        <p>Profile info</p>
+                    </div>
+                </div>
+                <div class="topbar__item logout">
+                    <i class="topbar__icon icon-quit"></i>
+                </div>
+            </div>
+            <div class="main__content">
+                <!--//<section class="section">
+                    <h2 class="section__header">Section title</h2>
+                    <div class="section__content"></div>
+                    <button class="btn"><i class="icon fa fa-redo-alt"></i><span class="name">add new</span></button>
+                    <button class="btn"><i class="icon fa fa-redo-alt"></i></button>
+                    <button class="btn"><span class="name">add new</span></button>
+                </section>//-->
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="modal" id="myModal">
+        </div>
+    </div>
+    <script id="template-sidebar-menu" type="text/x-handlebars-template">
+        <div class="sidebar__nav">
+            <div class="brand">
+                <div class="brand__logo">
+                    <img src="" alt="Just do it">
+                </div>
+                <div class="brand__mobile">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </div>
+            <ul class="nav">
+                {{#each menu }}
+                <li class="nav__item">
+                    <a class="nav__link" href="#{{ link }}" data-modules="{{ modules }}" data-title="{{ heading }}">
+                        <i class="icon {{ icon }}"></i>
+                        <span class="link__name">{{ title }}</span>
+                    </a>
+                </li>
+                {{/each }}
+            </ul>
+            <div class="sidebar__box">
+                <h2 class="sidebar__title">Your Manager</h2>
+                <ul class="team-box">
+                    <li class="team-box__item team-box__item--active">
+                        <div class="team-box__image">
+                            <img src="images/person.png" alt="Profile image">
+                        </div>
+                        <p class="team-box__profile">Adam Knotph</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </script>
+    <script id="template-main" type="text/x-handlebars-template">
+        <div class="section section--{{ link }}">
+            <h2 class="section__header">{{ title }}</h2>
+            <div class="section__content">
+            </div>
+        </div>
+    </script>
+    <script id="template-chart" type="text/x-handlebars-template">
+        <div class="section__wrapper">
+            <div class="row statBox">
+                <div class="col-sm-12 col-md-5">
+                    <div class="statBox__item">
+                        <span class="statBox__label">Visit Signups</span><span class="statBox__value">124</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <div class="statBox__item">
+                        <span class="statBox__label">Net deposit</span><span class="statBox__value">564</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <div class="statBox__item">
+                        <span class="statBox__label">FTD</span><span class="statBox__value">445</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <div class="statBox__item">
+                        <span class="statBox__label">Turn over</span><span class="statBox__value">432</span>
+                    </div>
+                </div>
+            </div>
+            <canvas id="chart" class="canvas"></canvas>
+        </div>
+    </script>
+    <script id="template-table" type="text/x-handlebars-template">
+            <div class="container--table"></div>
+    </script>
+    <script id="template-table-items" type="text/x-handlebars-template">
+        <div class="table-wrapper">
+            {{#if options.addButton }}
+            {{> button icon='+' title='add new' }}
+            {{/if }}
+            <div class="scroll-wrapper">
+            <table class="table">
+                {{#if options.labels }}
+                <tr class="table__header">
+                    {{#each options.labels as | label | }}
+                    <td class="table__cell">
+                        <span class="table__sort">
+                            {{ label }}<i class="icon icon-arrow-down-small"></i>
+                        </span>
+                    </td>
+                    {{/each}}
+                </tr>
+                {{/if}}
+                {{#each items as | item | }}
+                <tr class="table__row">
+                    {{#each item }}
+                    {{#ifEquals @key ../../options.hidden }}
+                    
+                    <td class="table__cell">
+                        {{#ifUrl this }}<a href="{{this}}" class="table__link" target="_blank">{{/ifUrl}}{{this}}{{#ifUrl this }}</a>{{/ifUrl}}</td>
+                    {{/ifEquals}}
+                    {{/each}}
+                    {{#if ../options.controls }}
+                    <td class="table__cell">
+                        <a  class="table__button main-color" href="#"><i class="icon-links"></i></a>
+                        <a class="table__button" href="#"><i class="icon-trash"></i></a>
+                    </td>
+                    {{/if}}
+                </tr>
+                {{/each}}
+            </table>
+           </div>
+            {{#if options.addButton }}
+            {{> button icon='+' title='add new' }}
+            {{/if }}
+            {{#if options.pagination }}
+            <div class="row justify-center">
+                <ul class="pagination">
+                    <li class="pagination__arrow arrow--left"><i class="icon icon-arrow-left"></i></li>
+                    <li class="pagination__item active">1</li>
+                    <li class="pagination__item">2</li>
+                    <li class="pagination__item">3</li>
+                    <li class="pagination__item">4</li>
+                    <li class="pagination__item">5</li>
+                    <li class="pagination__item">6</li>
+                    <li class="pagination__item">7</li>
+                    <li class="pagination__item">8</li>
+                    <li class="pagination__item">9</li>
+                    <li class="pagination__arrow arrow--right"><i class="icon icon-arrow-right"></i></li>
+                </ul>
+            </div>
+            {{/if}}
+        </div>
+    </script>
+    <script id="template-datepicker" type="text/x-handlebars-template">
+        <div class="row justify-center border-bottom">
+            <div class="datepicker">
+                <div class="datepicker__range">
+                    <div class="datepicker__from date-from date-range--from">
+                        <input type="text" name="text" value="">
+                    </div>
+                    <div class="datepicker__to date-to date-range--to">
+                        <input type="text" name="text" value="">
+                        <a class="input-button" title="toggle" data-toggle>
+                            <i class="icon-calendar"></i>
+                        </a>
+                    </div>
+                </div>
+                <button type="button" class="btn"><i class="btn__icon icon-refresh"></i></button>
+            </div>
+        </div>
+    </script>
+    <script id="template-button" type="text/x-handlebars-template">
+        <div class="row justify-center">
+            <button type="button" class="btn">
+                {{#if icon }}<i class="btn__icon {{iconClass}}">{{icon}}</i>{{/if}}
+                {{#if title }}<span class="btn__name">{{title}}</span>{{/if}}
+            </button>
+        </div>
+    </script>
+    <script id="template-personal-data" type="text/x-handlebars-template">
+        <form>
+            <div class="form__control">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="{{firstname}}">
+            </div>
+            <div class="form__control">
+                <label for="surname">Surname</label>
+                <input type="text" name="surname" id="surname" value="{{lastname}}">
+            </div>
+            <div class="form__control">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" value="{{email}}">
+            </div>
+            <div class="form__control">
+                <label for="phone">Phone</label>
+                <input type="text" name="phone" id="phone" value="{{phone}}">
+            </div>
+            <div class="separator border-bottom"></div>
+            <div class="form__control">
+                <label for="skype">Skype</label>
+                <input type="text" name="skype" id="skype" value="{{skype}}">
+            </div>
+            <div class="form__control">
+                <label for="icq">ICQ</label>
+                <input type="text" name="icq" id="icq" value="{{icq}}">
+            </div>
+            <div class="form__control">
+                <label for="msn">Msn</label>
+                <input type="text" name="msn" id="msn" value="{{msn}}">
+            </div>
+            <div class="separator border-bottom"></div>
+            <div class="form__control">
+                <label for="vallet">Wallet</label>
+                <input type="text" name="vallet" id="wallet" value="{{wallet}}">
+            </div>
+            <div class="separator border-bottom"></div>
+            <div class="form__control">
+                <label for="password">Password</label>
+                <input type="text" name="password" id="password" value="{{password}}">
+            </div>
+            <div class="form__control">
+                <label for="repeat">Repeat</label>
+                <input type="password" name="repeat" id="repeat" value="{{password}}">
+            </div>
+            <div class="separator border-bottom"></div>
+            {{> button title='Save' }}
+        </form>
+    </script>
+    <script id="template-form-banners" type="text/x-handlebars-template">
+        <form class="form form--horizontal">
+            <div class="row">
+                <h3 class="modal__title">Add banners</h3>
+                <i class="icon icon-close"></i>
+            </div>
+            <div class="row">
+                <div class="form-control">
+                    <label for="name">Scheme name</label>
+                    <input type="text" name="name" id="name">
+                </div>
+            </div>
+        </form>
+    </script>
+    <script id="template-form-links" type="text/x-handlebars-template">
+        <form class="form form--horizontal">
+            <div class="row">
+                <h3 class="modal__title"><span>Add Links</span><i class="icon icon-close"></i></h3>
+            </div>
+            <div class="form__row">
+                <div class="form__control col-sm-12 col-md-5">
+                    <label for="name">Scheme name</label>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+                <div class="form__control col-sm-12 col-md-5">
+                    <label for="compain"> </label>
+                    <input type="text" name="compain" id="compain" placeholder="Select compain">
+                </div>
+                <div class="form__control col-sm-12 col-md-2">
+                    <label for="language">Language</label>
+                    <div class="form__select">
+                        <select name="language" id="language">
+                            <option value="1">EN</option>
+                            <option value="2">FR</option>
+                            <option value="3">ES</option>
+                            <option value="4">US</option>
+                            <option value="5">CH</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__control">
+                    <label>Select websites</label>
+                    <ul class="form__list">
+                        <li><input type="checkbox" id="page1"><label for="page1">Landing page Money</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page2"><label for="page2">LP Your choice</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page3"><label for="page3">LP Wallet</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page4"><label for="page4">LP Shop 01</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page5"><label for="page5">Toy Store</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page6"><label for="page6">Book Store</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page7"><label for="page7">Charity</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page8"><label for="page8">LP Icons Store</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page9"><label for="page9">Templates Store</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page10"><label for="page10">Random text</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page11"><label for="page11">Mobile app</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page12"><label for="page12">LP Senator free signals</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page13"><label for="page13">LP DE Your choice</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page14"><label for="page14">Invest wisely</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page15"><label for="page15">Toy Store LP Sign up page</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page16"><label for="page16">Senator Account types</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page17"><label for="page17">Senator Mobile app</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page18"><label for="page18">Senator store</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page19"><label for="page19">Senator April Promo</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page20"><label for="page20">Language Learning LP</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page21"><label for="page21">Your second site</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page22"><label for="page22">Your second LP</label><a href="#"><i class="icon icon-show"></i></a></li>
+                        <li><input type="checkbox" id="page23"><label for="page23">Landing page Money</label><a href="#"><i class="icon icon-show"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form__row">
+                <div class="form__control col-sm-12 col-md-9">
+                    <input type="text" name="link" placeholder="Generated link">
+                </div>
+                <div class="form__control col-sm-6 col-md-2">
+                    <button class="btn" disabled><i class="btn__icon icon-links"></i><span class="btn__name">Copy link</span></button>
+                </div>
+                <div class="form__control col-sm-6 col-md-1">
+                    <button class="btn"><span class="btn__name">Save</span></button>
+                </div>
+            </div>
+        </form>
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

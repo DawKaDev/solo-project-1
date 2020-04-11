@@ -1,0 +1,32 @@
+.pagination {
+  display: flex;
+  flex-wrap: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+.pagination__item, .pagination__arrow {
+  color: $info-color;
+  padding: 15px;
+  cursor: pointer;
+
+  &.active {
+    background: $grey-color-light;
+    color: $grey-color-dark;
+    cursor: default;
+  }
+
+  &:hover {
+    background: $light-color;
+  }
+} 
+
+.pagination__arrow {
+  color: $grey-color-dark;
+}
+
+@media screen and (max-width: 767px) {
+  .pagination__item {
+    display: none;
+  }
+}

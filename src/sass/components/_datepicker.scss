@@ -1,0 +1,41 @@
+.datepicker {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 45px 0;
+}
+
+.datepicker__range {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  border: 1px solid $grey-color-light;
+  border-radius: 4px;
+  margin: 0 15px 0 0;
+  
+  input {
+    border-color: transparent;
+    border: 0;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: $grey-color-light;
+    width: 1px;
+    height: 70%;
+    left: 45%;
+    top: 8px;
+  }
+}
+
+.date-range--to {
+  margin-left: -30px;
+  position: relative;
+
+  .input-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}

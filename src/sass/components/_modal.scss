@@ -1,0 +1,31 @@
+.modal {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #ffffff;
+  position: relative;
+  padding: 15px;
+  display: none;
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+}
+
+.modal__title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 15px 15px 15px;
+  margin: 0;
+  border-bottom: 1px solid $light-color;
+  position: relative;
+  text-transform: uppercase;
+}

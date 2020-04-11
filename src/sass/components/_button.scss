@@ -1,0 +1,22 @@
+.btn {
+  padding: 12px 0 12px 15px;
+  color: $white-color;
+  background: $main-color;
+  border: 0;
+  border-radius: 4px;
+  transition: all 0.5s;
+
+  &:hover {
+    background: $main-color-light;
+    cursor: pointer;
+  }
+
+  &__icon, &__name {
+    padding: 0 15px 0 0;
+    white-space: nowrap;
+  }
+}
+
+.btn:disabled {
+  background: $grey-color-light;
+}

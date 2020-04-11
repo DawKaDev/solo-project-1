@@ -1,0 +1,23 @@
+.profile {
+  position: relative;
+}
+
+.profile:hover .profile__info {
+  display: block;
+}
+
+.profile__info {
+  position: absolute;
+  display: none;
+  background: $light-color;
+  padding: 15px;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 5px 5px 5px $light-color;
+}
+
+@media screen and (max-width: 480px) {
+  .profile__name {
+    display: none;
+  }
+}

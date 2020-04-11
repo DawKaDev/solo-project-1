@@ -1,0 +1,45 @@
+.topbar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: $white-color;
+  justify-content: end;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid $grey-color-light;
+  z-index: 999999;
+}
+
+.topbar__item {
+  display: flex;
+  border-left: 1px solid $grey-color-light;
+  padding: 20px 0 20px 20px;
+  font-size: 18px;
+  color: $grey-color-dark;
+
+  &:hover {
+    background: lighten($grey-color-light, 5%);
+    cursor: pointer;
+  }
+}
+
+.topbar__icon, .topbar__content, .topbar__link {
+  padding: 0 20px 0 0;
+  position: relative;
+}
+
+.topbar__icon--alert::after {
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: 9px;
+  background: $main-color;
+  border-radius: 50px;
+  width: 8px;
+  height: 8px;
+}
+
+.topbar__content--info {
+  color: $info-color;
+  font-size: 14px;
+}

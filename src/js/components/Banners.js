@@ -23,7 +23,7 @@ class Banners {
       controls: true,
       hidden: [],
     };
-    thisBanners.table = new Table(thisBanners.dom.table, thisBanners.data, options);
+    thisBanners.table = new Table(thisBanners.dom.table, thisBanners.data, options, thisBanners.name);
   }
 
   getData() {

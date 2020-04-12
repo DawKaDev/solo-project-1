@@ -34,13 +34,22 @@ class Modal {
     const thisModal = this;
     thisModal.dom.close = thisModal.dom.modal.querySelector('.icon-close');
     thisModal.dom.close.addEventListener('click', function(){
-      thisModal.dom.overlay.classList.remove('show');
+      thisModal.closeModal();
     });
     thisModal.dom.overlay.addEventListener('click', function(e) {
       if(e.target === this) {
-        thisModal.dom.overlay.classList.remove('show');
+        thisModal.closeModal();
       }
     });
+    document.addEventListener('keyup', function(e) {
+      if(e.keyCode === 27) {
+        thisModal.closeModal();
+      }
+    });
+  }
+  closeModal() {
+    const thisModal = this;
+    thisModal.dom.overlay.classList.remove('show');
   }
 }
 

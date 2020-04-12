@@ -7,18 +7,21 @@ import Banners from './components/Banners.js';
 import BaseContainer from './components/BaseContainer.js';
 import Personal from './components/Personal.js';
 import Payout from './components/Payout.js';
-//import Table from './components/Table.js';
 const app = {
   initPages: function(){
     const thisApp = this;
     thisApp.pages = Array.from(document.querySelector(select.containerOf.main).children);
     thisApp.navLinks = document.querySelectorAll(select.nav.links);
     const idFromHash = window.location.hash.replace('#/', '');
+    let pageMatchingHash = thisApp.navLinks[0].getAttribute('href').replace('#','');
+    for(let page of thisApp.pages){
+      if(page.classList.contains('section--'+idFromHash.replace('#',''))){
+        pageMatchingHash = idFromHash.replace('#','');
+        break;
+      }
+    }
+    thisApp.activatePage(pageMatchingHash);
     
-    ///console.log(thisApp.pages);
-    //console.log(idFromHash);
-    thisApp.activatePage(idFromHash.replace('#', ''));
-    //console.log(thisApp.navLinks);
     for(let link of thisApp.navLinks){
       link.addEventListener('click', function(event){
         const clickedElement = this;
@@ -46,12 +49,10 @@ const app = {
     if(sectionModules != '') {
       const modules = sectionModules.split(',');
       modules.forEach(module => {
-        //console.log('modul', module, id);
         const activeModule = document.querySelector('.section--'+module);
         activeModule.classList.add('active');
       });
     }
-    //console.log(id);
     const activePage = document.querySelector('.section--' + id);
     activePage.classList.add('active');
   },
@@ -65,7 +66,6 @@ const app = {
       })
       .then(function(parsedResponse){
         thisApp.data = parsedResponse;
-        //console.log('app',thisApp.data);
         new BaseContainer(thisApp.data);
         new Sidebar(thisApp.data);
         new General();
@@ -77,28 +77,9 @@ const app = {
         thisApp.initPages();
       });
   },
-  initGeneral() {
-    const thisApp = this;
-    new General('general', 'General statistics', thisApp.data);
-  },
-  initLinks() {
-    new Links('links', 'Links statistics');
-  },
-  initDetails() {
-    new Details('details', 'Details');
-  },
-  /*getInfo(id) {
-    const thisApp = this;
-    const title = thisApp.data[0].title;
-    //console.log('test1', title, id);
-  },*/
   init() {
     const thisApp = this;
     thisApp.getData();
-    //new Sidebar;
-    //setTimeout(() => thisApp.initPages(), 1500);
-    //thisApp.initPages();
-    //thisApp.initGeneral();
   }
 };
 app.init();

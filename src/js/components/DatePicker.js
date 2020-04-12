@@ -22,7 +22,6 @@ class DatePicker {
       thisWidget.announce();
     }
     thisWidget.renderValue();
-    //console.log('setter',value);
   }
   setValue(value) {
     const thisWidget = this;
@@ -38,7 +37,6 @@ class DatePicker {
   renderValue(){
     const thisWidget = this;
     thisWidget.dom.input.value = thisWidget.value;
-    //console.log('render',thisWidget.value);
   }
   announce(){
     const thisWidget = this;
@@ -64,7 +62,6 @@ class DatePicker {
     const thisWidget = this;
     thisWidget.dom.button.addEventListener('click', function(){
       event.preventDefault();
-      //console.log('test');
     });
   }
 

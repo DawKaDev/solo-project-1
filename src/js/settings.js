@@ -20,6 +20,7 @@ export const select = {
     main: '.main__content',
     section: '.section',
     content: '.section__content',
+    table: '.container--table',
   },
   nav: {
     links: '.nav__link',

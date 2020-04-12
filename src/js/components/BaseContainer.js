@@ -34,7 +34,6 @@ class BaseContainer {
     thisBaseContainer.dom = {};
     thisBaseContainer.dom.container = document.querySelector(select.containerOf.section + '--' + thisBaseContainer.data.module);
     thisBaseContainer.dom.wrapper = thisBaseContainer.dom.container.querySelector(select.containerOf.content);
-    //console.log(thisBaseContainer.dom);
   }
 }
 export default BaseContainer;

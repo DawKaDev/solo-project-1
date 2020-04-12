@@ -1,42 +1,29 @@
-import {settings} from '../settings.js';
-//import {utils} from '../utils.js';
-//import BaseContainer from './BaseContainer.js';
+import {select, settings} from '../settings.js';
 import Table from './Table.js';
 class Links {
   constructor() {
     const thisLinks = this;
-    //thisBaseContainer.renderElements();
+    thisLinks.name = thisLinks.constructor.name.toLowerCase();
     thisLinks.getElements();
     thisLinks.getData();
-    //thisLinks.renderElements();
   }
 
   getElements() {
     const thisLinks = this;
     thisLinks.dom = {};
-    thisLinks.dom.wrapper = document.querySelector('.section--' + thisLinks.constructor.name.toLowerCase());
-    thisLinks.dom.table = thisLinks.dom.wrapper.querySelector('.container--table');
-    console.log(thisLinks);
+    thisLinks.dom.wrapper = document.querySelector(select.containerOf.section + '--' + thisLinks.name);
+    thisLinks.dom.table = thisLinks.dom.wrapper.querySelector(select.containerOf.table);
   }
 
   renderElements() {
     const thisLinks = this;
-    //console.log('getdata1515151',thisLinks.data);
-    //thisLinks.data = thisLinks.getData();
-    //console.log('getdata1515151',thisLinks.data);
-    /*const data = [
-      {
-        name: 'adam',
-        surname: 'badab',
-      },
-    ];*/
     const options = {
       addButton: true,
       sorting: false,
       controls: true,
       hidden: [],
     };
-    thisLinks.table = new Table(thisLinks.dom.table, thisLinks.data, options, thisLinks.constructor.name.toLowerCase());
+    thisLinks.table = new Table(thisLinks.dom.table, thisLinks.data, options, thisLinks.name);
   }
 
   getData() {
@@ -49,9 +36,7 @@ class Links {
         return rawResponse.json();
       }).then(function(parsedResponse){
         thisLinks.data = parsedResponse;   
-        //console.log('parsed',parsedResponse);    
         thisLinks.renderElements();
-        //return parsedResponse; 
       });
   }
 }

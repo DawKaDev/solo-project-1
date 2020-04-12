@@ -27,16 +27,6 @@ class Table {
     const buttons = thisTable.dom.wrapper.querySelectorAll('button');
     buttons.forEach((button) => {
       thisTable.button = new Modal(button, thisTable.parent);
-      /*button.setAttribute('data-modal', thisTable.parent);
-      button.addEventListener('click', function(event){
-        event.preventDefault();
-        const generatedHTML = templates.button();
-        this.element = utils.createDOMFromHTML(generatedHTML);
-        wrapper.appendChild(this.element);
-        modal.classList.add('show');
-        wrapper.classList.add('show');
-        console.log(thisTable);
-      })*/
     } );
   }
 }

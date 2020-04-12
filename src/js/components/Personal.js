@@ -1,21 +1,18 @@
-import {settings, templates} from '../settings.js';
+import {select, settings, templates} from '../settings.js';
 import {utils} from '../utils.js';
-//import BaseContainer from './BaseContainer.js';
-//import Table from './Table.js';
 class Personal {
   constructor() {
     const thisSection = this;
-    //thisBaseContainer.renderElements();
+    thisSection.name = thisSection.constructor.name.toLowerCase();
     thisSection.getElements();
     thisSection.getData();
-    //thisSection.renderElements();
   }
 
   getElements() {
     const thisSection = this;
     thisSection.dom = {};
-    thisSection.dom.wrapper = document.querySelector('.section--' + thisSection.constructor.name.toLowerCase());
-    thisSection.dom.container = thisSection.dom.wrapper.querySelector('.section__content');
+    thisSection.dom.wrapper = document.querySelector(select.containerOf.section + '--' + thisSection.name);
+    thisSection.dom.container = thisSection.dom.wrapper.querySelector(select.containerOf.content);
   }
 
   renderElements() {
@@ -23,7 +20,6 @@ class Personal {
     const generatedHTML = templates.personal(thisSection.data[0]);
     const mainContainer = utils.createDOMFromHTML(generatedHTML);
     thisSection.dom.container.appendChild(mainContainer);
-    console.log(thisSection.data[0]);
   }
 
   getData() {
@@ -35,10 +31,8 @@ class Personal {
       .then(function(rawResponse){
         return rawResponse.json();
       }).then(function(parsedResponse){
-        thisSection.data = parsedResponse;   
-        //console.log('parsed',parsedResponse);    
+        thisSection.data = parsedResponse;    
         thisSection.renderElements();
-        //return parsedResponse; 
       });
   }
 }

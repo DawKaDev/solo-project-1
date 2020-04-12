@@ -1,43 +1,42 @@
-import {settings} from '../settings.js';
-//import {utils} from '../utils.js';
-//import BaseContainer from './BaseContainer.js';
+import {select, settings} from '../settings.js';
 import Table from './Table.js';
 class Banners {
   constructor() {
-    const thisLinks = this;
-    thisLinks.getElements();
-    thisLinks.getData();
+    const thisBanners = this;
+    thisBanners.name = thisBanners.constructor.name.toLowerCase();
+    thisBanners.getElements();
+    thisBanners.getData();
   }
 
   getElements() {
-    const thisLinks = this;
-    thisLinks.dom = {};
-    thisLinks.dom.wrapper = document.querySelector('.section--' + thisLinks.constructor.name.toLowerCase());
-    thisLinks.dom.table = thisLinks.dom.wrapper.querySelector('.container--table');
+    const thisBanners = this;
+    thisBanners.dom = {};
+    thisBanners.dom.wrapper = document.querySelector(select.containerOf.section + '--' + thisBanners.name);
+    thisBanners.dom.table = thisBanners.dom.wrapper.querySelector(select.containerOf.table);
   }
 
   renderElements() {
-    const thisLinks = this;
+    const thisBanners = this;
     const options = {
       addButton: true,
       sorting: false,
       controls: true,
       hidden: [],
     };
-    thisLinks.table = new Table(thisLinks.dom.table, thisLinks.data, options);
+    thisBanners.table = new Table(thisBanners.dom.table, thisBanners.data, options);
   }
 
   getData() {
-    const thisLinks = this;
+    const thisBanners = this;
     const url = settings.db.url + settings.db.banners;
-    thisLinks.data = {};
+    thisBanners.data = {};
 
     fetch(url)
       .then(function(rawResponse){
         return rawResponse.json();
       }).then(function(parsedResponse){
-        thisLinks.data = parsedResponse;      
-        thisLinks.renderElements();
+        thisBanners.data = parsedResponse;      
+        thisBanners.renderElements();
       });
   }
 }

@@ -1,10 +1,10 @@
-import {settings} from '../settings.js';
-//import {utils} from '../utils.js';
+import {select, settings} from '../settings.js';
 import DatePicker from './DatePicker.js';
 import Table from './Table.js';
 class Payout {
   constructor() {
     const thisSection = this;
+    thisSection.name = thisSection.constructor.name.toLowerCase();
     thisSection.getElements();
     thisSection.getData();
   }
@@ -12,7 +12,7 @@ class Payout {
   getElements() {
     const thisSection = this;
     thisSection.dom = {};
-    thisSection.dom.wrapper = document.querySelector('.section--' + thisSection.constructor.name.toLowerCase());
+    thisSection.dom.wrapper = document.querySelector(select.containerOf.section + '--' + thisSection.name);
     thisSection.dom.datepicker = thisSection.dom.wrapper.querySelector('.datepicker');
     thisSection.dom.dateFrom = thisSection.dom.datepicker.querySelector('.date-from');
     thisSection.dom.dateTo = thisSection.dom.datepicker.querySelector('.date-to');
@@ -45,9 +45,7 @@ class Payout {
         return rawResponse.json();
       }).then(function(parsedResponse){
         thisLinks.data = parsedResponse;   
-        //console.log('parsed',parsedResponse);    
         thisLinks.renderElements();
-        //return parsedResponse; 
       });
   }
 }
